@@ -35,11 +35,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+
+
+var uploadDir = __dirname + '/public/files/';
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
 app.post('/upload_image', function (req, res, next) {
   var fstream;
   req.busboy.on('file', function (fieldname, file, filename) {
     filename = md5(filename);
-    fstream = fs.createWriteStream(__dirname + '/public/files/' + filename);
+    fstream = fs.createWriteStream(uploadDir + filename);
     file.pipe(fstream);
     fstream.on('close', function () {
       res.end(JSON.stringify({
