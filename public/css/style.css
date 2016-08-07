@@ -1,0 +1,31 @@
+a {
+  color: #00B7FF; }
+
+.fr-wrapper + div {
+  display: none; }
+
+.fr-wrapper + span + div {
+  display: none; }
+
+a[href="https://froala.com/wysiwyg-editor"] {
+  display: none; }
+
+.fr-image-resizer .fr-handler {
+  width: 20px;
+  height: 20px; }
+
+.fr-image-resizer .fr-handler.fr-hnw {
+  left: -10px;
+  top: -10px; }
+
+.fr-image-resizer .fr-handler.fr-hne {
+  right: -10px;
+  top: -10px; }
+
+.fr-image-resizer .fr-handler.fr-hsw {
+  left: -10px;
+  bottom: -10px; }
+
+.fr-image-resizer .fr-handler.fr-hse {
+  right: -10px;
+  bottom: -10px; }
